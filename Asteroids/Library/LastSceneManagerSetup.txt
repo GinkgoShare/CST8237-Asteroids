@@ -1,0 +1,4 @@
+sceneSetups:
+- path: C:/Users/cjwel/OneDrive/Algonquin_W16/game_programming/Space Shooter/Assets/_Scenes/Main.unity
+  isLoaded: 1
+  isActive: 1
