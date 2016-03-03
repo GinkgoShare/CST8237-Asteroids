@@ -46,6 +46,8 @@ public class MovePlayer : MonoBehaviour {
 			if (lives > 0) {
 				_lifeSprites [lives--].SetActive (false);
 				transform.position = new Vector3 (0.0f, 0.0f, -5.0f);
+				transform.rotation = new Quaternion (0f, 0f, 0f, 0f);
+				gameObject.GetComponent<Rigidbody2D> ().velocity = Vector3.zero;
 				//Wait ();
 			} else {
 				_lifeSprites [lives].SetActive (false);
