@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MovePlayer : MonoBehaviour {
 
@@ -8,10 +9,20 @@ public class MovePlayer : MonoBehaviour {
 	public GameObject bolt;
 	public Transform boltSpawn;
 	public GameObject explosion;
+	public GameObject life1;
+	public GameObject life2;
+	public GameObject life3;
 	public float fireRate;
 	public int lives;
 
 	private float _nextFire;
+	private List<GameObject> _lifeSprites = new List<GameObject> (3);
+
+	void Start() {
+		_lifeSprites.Add (life1);
+		_lifeSprites.Add (life2);
+		_lifeSprites.Add (life3);
+	}
 
 	void Update() {
 		if (Input.GetKey (KeyCode.Space) && Time.time > _nextFire) {
@@ -32,11 +43,12 @@ public class MovePlayer : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("BigAsteroid") || other.CompareTag ("MedAsteroid") || other.CompareTag ("SmallAsteroid")) {
 			Instantiate (explosion, transform.position, transform.rotation);
-			if (lives > 1) {
-				--lives;
+			if (lives > 0) {
+				_lifeSprites [lives--].SetActive (false);
 				transform.position = new Vector3 (0.0f, 0.0f, -5.0f);
 				//Wait ();
 			} else {
+				_lifeSprites [lives].SetActive (false);
 				Destroy (gameObject);
 			}
 		}
