@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// moves bolt in one direction
 public class Mover : MonoBehaviour {
 
 	public float speed;

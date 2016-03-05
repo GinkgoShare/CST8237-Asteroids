@@ -12,6 +12,8 @@ public class BoltCollider : MonoBehaviour {
 	public float minForce;
 	public float maxForce;
 
+	// this script attaches to objects and checks if a bolt collides with it
+	// I found when I attached this script with the commented out code below to the boltobject itself the game lagged
 	void OnTriggerEnter2D(Collider2D other) {
 //		Vector3 thisPosition = transform.position;
 //		Quaternion thisRotation = transform.rotation;
@@ -43,6 +45,7 @@ public class BoltCollider : MonoBehaviour {
 //			Instantiate (explosion, thisPosition, thisRotation);
 //		}
 
+		// Check if the collision is from a bolt object
 		if (other.CompareTag ("Bolt")) {
 			//scoreText.text = string.Format ("{0:0000}", System.Int16.Parse(scoreText.text) + 20);
 			Vector3 thisPosition = transform.position;

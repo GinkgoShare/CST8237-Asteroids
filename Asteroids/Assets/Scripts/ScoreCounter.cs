@@ -8,6 +8,7 @@ public class ScoreCounter : MonoBehaviour {
 
 	private static int _score = 0;
 
+	// Increment score when this bolt hits an asteroids
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("BigAsteroid")) {
 			_score += 5;

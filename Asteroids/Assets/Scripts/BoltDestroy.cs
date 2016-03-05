@@ -5,6 +5,7 @@ public class BoltDestroy : MonoBehaviour {
 
 	public GameObject explosion;
 
+	// this script attaches to small asteroids to destroy them on collisions
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag ("Bolt")) {
 			Destroy (other.gameObject);

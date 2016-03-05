@@ -1,13 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Boundary {
-	public float minX;
-	public float maxX;
-	public float minY;
-	public float maxY;
-}
-
 public class OutOfBounds : MonoBehaviour {
 
 	public float minX;
@@ -15,6 +8,7 @@ public class OutOfBounds : MonoBehaviour {
 	public float minY;
 	public float maxY;
 
+	// transports asteroids to other side of map when leaving scene
 	void Update() {
 		float posX, posY;
 		if (transform.position.x >= maxX) posX = minX;

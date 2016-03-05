@@ -6,6 +6,7 @@ public class MoveAsteroid : MonoBehaviour {
 	public float minForce;
 	public float maxForce;
 
+	// apply random force to the asteroid
 	void Start () {
 		float x = Random.Range (-1f, 1f);
 		float y = Random.Range (-1f, 1f);

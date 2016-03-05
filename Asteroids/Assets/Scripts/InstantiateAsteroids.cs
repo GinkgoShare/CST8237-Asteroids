@@ -9,6 +9,7 @@ public class InstantiateAsteroids : MonoBehaviour {
 	public float maxY;
 	public GameObject asteroid;
 
+	// create the asteroids for new games
 	void Start () {
 		for (int i = 0; i < 5; ++i) {
 			float x = Random.Range (minX, maxX);
